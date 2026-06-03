@@ -27,15 +27,17 @@ const stats = [
 export default function Realisations() {
   return (
     <>
-      <section className="bg-[#0A1120] pt-36 pb-20 relative overflow-hidden grid-bg">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#00897B]/5 rounded-full blur-3xl" />
+      {/* Header */}
+      <section className="bg-white pt-36 pb-20 relative overflow-hidden border-b border-[#E2E8F0]">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#00897B]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <span className="text-[#00897B] font-semibold text-sm uppercase tracking-widest">Portfolio</span>
-          <h1 className="text-4xl sm:text-5xl font-black text-white mt-2 mb-4">Nos réalisations</h1>
-          <p className="text-[#94A3B8] text-lg max-w-2xl">Industrie automobile, secteur public, éducation — partout en France.</p>
+          <h1 className="text-4xl sm:text-5xl font-black text-[#0F172A] mt-2 mb-4">Nos réalisations</h1>
+          <p className="text-[#64748B] text-lg max-w-2xl">Industrie automobile, secteur public, éducation — partout en France.</p>
         </div>
       </section>
 
+      {/* Stats band */}
       <section className="bg-[#00897B] py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -49,12 +51,13 @@ export default function Realisations() {
         </div>
       </section>
 
-      <section className="py-24 bg-[#0F172A]">
+      {/* Cards */}
+      <section className="py-24 bg-[#F8FAFB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {realisations.map((r) => (
-              <div key={r.client} className={`bg-[#1E293B] rounded-2xl p-6 border transition-all duration-300 hover:shadow-xl hover:shadow-[#00897B]/10 hover:-translate-y-0.5 ${
-                r.highlight ? 'border-[#00897B] shadow-lg shadow-[#00897B]/20' : 'border-[#334155] hover:border-[#00897B]/50'
+              <div key={r.client} className={`bg-white rounded-2xl p-6 border transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 ${
+                r.highlight ? 'border-[#00897B] shadow-md shadow-[#00897B]/10' : 'border-[#E2E8F0] hover:border-[#00897B]/40'
               }`}>
                 {r.highlight && (
                   <span className="inline-block bg-[#00897B] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
@@ -62,18 +65,18 @@ export default function Realisations() {
                   </span>
                 )}
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-[#0F172A] rounded-xl flex items-center justify-center border border-[#334155] shrink-0">
+                  <div className="w-12 h-12 bg-[#F1F5F9] rounded-xl flex items-center justify-center border border-[#E2E8F0] shrink-0">
                     <span className="text-[#00897B] font-black text-xs tracking-wider">{r.initiales}</span>
                   </div>
                   <div>
-                    <h3 className="font-bold text-white text-sm leading-snug">{r.client}</h3>
+                    <h3 className="font-bold text-[#0F172A] text-sm leading-snug">{r.client}</h3>
                     <p className="text-[#00897B] text-xs mt-0.5">{r.secteur}</p>
                   </div>
                 </div>
-                <p className="text-[#94A3B8] text-sm leading-relaxed mb-4">{r.desc}</p>
+                <p className="text-[#64748B] text-sm leading-relaxed mb-4">{r.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {r.tags.map((tag) => (
-                    <span key={tag} className="text-xs text-[#475569] border border-[#334155] px-2.5 py-1 rounded-full">{tag}</span>
+                    <span key={tag} className="text-xs text-[#64748B] border border-[#E2E8F0] bg-[#F8FAFB] px-2.5 py-1 rounded-full">{tag}</span>
                   ))}
                 </div>
               </div>
@@ -82,14 +85,15 @@ export default function Realisations() {
         </div>
       </section>
 
-      <section className="py-20 bg-[#0A1120] relative overflow-hidden">
+      {/* CTA */}
+      <section className="py-20 bg-[#0F172A] relative overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-96 h-96 bg-[#00897B]/5 rounded-full blur-3xl" />
+          <div className="w-96 h-96 bg-[#00897B]/10 rounded-full blur-3xl" />
         </div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl font-black text-white mb-4">Votre projet sera notre prochaine réalisation</h2>
           <p className="text-[#94A3B8] mb-8">Contactez-nous pour discuter de vos besoins GTB.</p>
-          <Link href="/contact" className="bg-[#00897B] hover:bg-[#00695C] text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 cursor-pointer glow-emerald-sm">
+          <Link href="/contact" className="bg-[#00897B] hover:bg-[#00695C] text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 cursor-pointer inline-block">
             Demander un devis
           </Link>
         </div>

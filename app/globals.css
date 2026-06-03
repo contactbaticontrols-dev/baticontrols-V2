@@ -1,14 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0F172A;
-  --surface: #1E293B;
-  --surface2: #273549;
+  --bg: #FFFFFF;
+  --bg-soft: #F8FAFB;
+  --surface: #F1F5F9;
+  --dark: #0F172A;
+  --dark2: #1E293B;
   --emerald: #00897B;
   --emerald-light: #26A69A;
-  --border: #334155;
-  --text: #F8FAFC;
-  --text-muted: #94A3B8;
+  --emerald-dark: #00695C;
+  --emerald-soft: rgba(0, 137, 123, 0.08);
+  --border: #E2E8F0;
+  --text: #0F172A;
+  --text-muted: #64748B;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,19 +26,18 @@ body {
   overflow-x: hidden;
 }
 
-.glow-emerald { box-shadow: 0 0 30px rgba(0,137,123,0.3), 0 0 60px rgba(0,137,123,0.1); }
-.glow-emerald-sm { box-shadow: 0 0 15px rgba(0,137,123,0.2); }
-.text-glow { text-shadow: 0 0 40px rgba(0,137,123,0.5); }
+.glow-emerald { box-shadow: 0 0 30px rgba(0,137,123,0.25), 0 4px 20px rgba(0,137,123,0.15); }
+.glow-emerald-sm { box-shadow: 0 4px 15px rgba(0,137,123,0.2); }
 
 .grid-bg {
   background-image:
-    linear-gradient(rgba(0,137,123,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,137,123,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0,137,123,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,137,123,0.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #00897B 50%, #26A69A 100%);
+  background: linear-gradient(135deg, #0F172A 0%, #00897B 60%, #26A69A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -48,13 +51,9 @@ body {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(0,137,123,0.3); }
-  50% { box-shadow: 0 0 40px rgba(0,137,123,0.6); }
-}
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-8px); }
 }
 @keyframes bounce-y {
   0%, 100% { transform: translateY(0); }
@@ -63,7 +62,6 @@ body {
 
 .animate-fade-in-up { animation: fadeInUp 0.7s ease forwards; }
 .animate-fade-in { animation: fadeIn 0.7s ease forwards; }
-.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
 .animate-float { animation: float 4s ease-in-out infinite; }
 .animate-bounce { animation: bounce-y 1.5s ease-in-out infinite; }
 
