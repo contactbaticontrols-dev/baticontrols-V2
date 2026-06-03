@@ -12,12 +12,12 @@ export default function APropos() {
   return (
     <>
       {/* Header */}
-      <section className="bg-white pt-36 pb-20 relative overflow-hidden border-b border-[#E2E8F0]">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#00897B]/5 rounded-full blur-3xl pointer-events-none" />
+      <section className="bg-white pt-36 pb-20 relative overflow-hidden border-b border-[#D1DAFB]">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#1B3B8A]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <span className="text-[#00897B] font-semibold text-sm uppercase tracking-widest">Qui sommes-nous</span>
-          <h1 className="text-4xl sm:text-5xl font-black text-[#0F172A] mt-2 mb-4">À propos de BâtiControls</h1>
-          <p className="text-[#64748B] text-lg max-w-2xl">Électricien installateur & prestataire spécialisé GTB depuis plusieurs années.</p>
+          <span className="text-[#E8611A] font-semibold text-sm uppercase tracking-widest">Qui sommes-nous</span>
+          <h1 className="text-4xl sm:text-5xl font-black text-[#0D1F5C] mt-2 mb-4">À propos de BâtiControls</h1>
+          <p className="text-[#5A6B9A] text-lg max-w-2xl">Électricien installateur & prestataire spécialisé GTB depuis plusieurs années.</p>
         </div>
       </section>
 
@@ -26,26 +26,26 @@ export default function APropos() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-[#00897B] font-semibold text-sm uppercase tracking-widest">Notre histoire</span>
-              <h2 className="text-3xl font-black text-[#0F172A] mt-2 mb-6">Spécialistes GTB au service de vos bâtiments</h2>
-              <div className="space-y-4 text-[#64748B] leading-relaxed">
-                <p>BâtiControls est une société de prestation de services spécialisée dans la <strong className="text-[#0F172A]">Gestion Technique du Bâtiment (GTB)</strong>. Nous intervenons en tant qu'électricien installateur, prestataire et sous-traitant.</p>
-                <p>Notre équipe de <strong className="text-[#0F172A]">8 experts techniques</strong> maîtrise l'ensemble des protocoles GTB du marché : KNX, BACnet, Modbus, Zigbee, LoRa, LOXONE, Node-RED et WATTSENS.</p>
+              <span className="text-[#E8611A] font-semibold text-sm uppercase tracking-widest">Notre histoire</span>
+              <h2 className="text-3xl font-black text-[#0D1F5C] mt-2 mb-6">Spécialistes GTB au service de vos bâtiments</h2>
+              <div className="space-y-4 text-[#5A6B9A] leading-relaxed">
+                <p>BâtiControls est une société de prestation de services spécialisée dans la <strong className="text-[#0D1F5C]">Gestion Technique du Bâtiment (GTB)</strong>. Nous intervenons en tant qu'électricien installateur, prestataire et sous-traitant.</p>
+                <p>Notre équipe de <strong className="text-[#0D1F5C]">8 experts techniques</strong> maîtrise l'ensemble des protocoles GTB du marché : KNX, BACnet, Modbus, Zigbee, LoRa, LOXONE, Node-RED et WATTSENS.</p>
                 <p>Du câblage à la mise en service, nous assurons une prestation complète et rigoureuse sur toute la France.</p>
               </div>
             </div>
             <div className="flex justify-center">
               <div className="relative">
-                <div className="w-72 h-72 rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-lg">
+                <div className="w-72 h-72 rounded-2xl overflow-hidden border border-[#D1DAFB] shadow-lg">
                   <Image src="/logo.jpg" alt="BâtiControls" width={288} height={288} className="w-full h-full object-cover" />
                 </div>
-                <div className="absolute -top-4 -left-4 bg-[#00897B] text-white rounded-xl p-4 shadow-lg shadow-[#00897B]/30">
+                <div className="absolute -top-4 -left-4 bg-[#1B3B8A] text-white rounded-xl p-4 shadow-lg shadow-[#1B3B8A]/30">
                   <p className="text-3xl font-black">8</p>
                   <p className="text-xs font-medium">Experts GTB</p>
                 </div>
-                <div className="absolute -bottom-4 -right-4 bg-white border border-[#E2E8F0] text-[#0F172A] rounded-xl p-4 shadow-md">
+                <div className="absolute -bottom-4 -right-4 bg-white border border-[#D1DAFB] text-[#0D1F5C] rounded-xl p-4 shadow-md">
                   <p className="text-3xl font-black">7+</p>
-                  <p className="text-xs font-medium text-[#64748B]">Protocoles</p>
+                  <p className="text-xs font-medium text-[#5A6B9A]">Protocoles</p>
                 </div>
               </div>
             </div>
@@ -54,18 +54,45 @@ export default function APropos() {
       </section>
 
       {/* Valeurs */}
-      <section className="py-24 bg-[#F8FAFB]">
+      <section className="py-24 bg-[#F0F4FF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-[#00897B] font-semibold text-sm uppercase tracking-widest">Nos engagements</span>
-            <h2 className="text-3xl font-black text-[#0F172A] mt-2">Ce qui nous distingue</h2>
+            <span className="text-[#E8611A] font-semibold text-sm uppercase tracking-widest">Nos engagements</span>
+            <h2 className="text-3xl font-black text-[#0D1F5C] mt-2">Ce qui nous distingue</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {valeurs.map((v) => (
-              <div key={v.title} className="bg-white border border-[#E2E8F0] hover:border-[#00897B]/50 rounded-2xl p-10 transition-all duration-300 hover:shadow-md">
-                <div className="w-14 h-14 bg-[#00897B]/10 rounded-xl flex items-center justify-center text-[#00897B] mb-8">{v.icon}</div>
-                <h3 className="font-bold text-[#0F172A] mb-4">{v.title}</h3>
-                <p className="text-[#64748B] text-sm leading-loose">{v.desc}</p>
+              <div key={v.title} className="bg-white border border-[#D1DAFB] hover:border-[#1B3B8A]/50 rounded-2xl p-10 transition-all duration-300 hover:shadow-md">
+                <div className="w-14 h-14 bg-[#1B3B8A]/10 rounded-xl flex items-center justify-center text-[#1B3B8A] mb-8">{v.icon}</div>
+                <h3 className="font-bold text-[#0D1F5C] mb-4">{v.title}</h3>
+                <p className="text-[#5A6B9A] text-sm leading-loose">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Qualifications */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="text-[#E8611A] font-semibold text-sm uppercase tracking-widest">Certifications</span>
+            <h2 className="text-3xl font-black text-[#0D1F5C] mt-2">Qualifications & Habilitations</h2>
+            <p className="text-[#5A6B9A] mt-3 max-w-xl mx-auto">Nos techniciens sont qualifiés et habilités pour intervenir en toute sécurité sur toutes installations électriques et GTB.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { code: "B1V", label: "Habilitation électrique", desc: "Intervention sur installations basse tension" },
+              { code: "BR", label: "Chargé de travaux", desc: "Direction des travaux électriques" },
+              { code: "BC", label: "Consignateur", desc: "Consignation des installations électriques" },
+              { code: "GTB", label: "Spécialiste GTB", desc: "Gestion Technique du Bâtiment — tous protocoles" },
+            ].map((q) => (
+              <div key={q.code} className="bg-[#F0F4FF] border border-[#D1DAFB] rounded-2xl p-10 text-center hover:border-[#1B3B8A]/50 hover:shadow-md transition-all">
+                <div className="w-16 h-16 bg-[#1B3B8A] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <span className="text-white font-black text-sm">{q.code}</span>
+                </div>
+                <h4 className="font-bold text-[#0D1F5C] mb-3">{q.label}</h4>
+                <p className="text-[#5A6B9A] text-sm leading-relaxed">{q.desc}</p>
               </div>
             ))}
           </div>
@@ -73,14 +100,14 @@ export default function APropos() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#0F172A] relative overflow-hidden">
+      <section className="py-20 bg-[#0D1F5C] relative overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-96 h-96 bg-[#00897B]/10 rounded-full blur-3xl" />
+          <div className="w-96 h-96 bg-[#E8611A]/10 rounded-full blur-3xl" />
         </div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl font-black text-white mb-4">Travaillons ensemble</h2>
-          <p className="text-[#94A3B8] mb-8">Contactez notre équipe pour discuter de votre projet GTB.</p>
-          <Link href="/contact" className="bg-[#00897B] hover:bg-[#00695C] text-white font-bold px-8 py-4 rounded-xl transition-all cursor-pointer inline-block">
+          <p className="text-blue-200 mb-8">Contactez notre équipe pour discuter de votre projet GTB.</p>
+          <Link href="/contact" className="bg-[#E8611A] hover:bg-[#C24D10] text-white font-bold px-8 py-4 rounded-xl transition-all cursor-pointer inline-block shadow-lg shadow-[#E8611A]/25">
             Nous contacter
           </Link>
         </div>

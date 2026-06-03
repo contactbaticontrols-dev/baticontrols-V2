@@ -2,17 +2,17 @@
 
 :root {
   --bg: #FFFFFF;
-  --bg-soft: #F8FAFB;
-  --surface: #F1F5F9;
-  --dark: #0F172A;
-  --dark2: #1E293B;
-  --emerald: #00897B;
-  --emerald-light: #26A69A;
-  --emerald-dark: #00695C;
-  --emerald-soft: rgba(0, 137, 123, 0.08);
-  --border: #E2E8F0;
-  --text: #0F172A;
-  --text-muted: #64748B;
+  --bg-soft: #F0F4FF;
+  --surface: #E8EEFF;
+  --blue: #1B3B8A;
+  --blue-light: #2952C8;
+  --blue-dark: #0D1F5C;
+  --orange: #E8611A;
+  --orange-light: #F47C35;
+  --orange-dark: #C24D10;
+  --border: #D1DAFB;
+  --text: #0D1F5C;
+  --text-muted: #5A6B9A;
 }
 
 @layer base {
@@ -28,18 +28,19 @@ body {
   overflow-x: hidden;
 }
 
-.glow-emerald { box-shadow: 0 0 30px rgba(0,137,123,0.25), 0 4px 20px rgba(0,137,123,0.15); }
-.glow-emerald-sm { box-shadow: 0 4px 15px rgba(0,137,123,0.2); }
+.glow-blue { box-shadow: 0 0 30px rgba(27,59,138,0.25), 0 4px 20px rgba(27,59,138,0.15); }
+.glow-blue-sm { box-shadow: 0 4px 15px rgba(27,59,138,0.2); }
+.glow-orange { box-shadow: 0 0 30px rgba(232,97,26,0.3), 0 4px 20px rgba(232,97,26,0.2); }
 
 .grid-bg {
   background-image:
-    linear-gradient(rgba(0,137,123,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,137,123,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(27,59,138,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27,59,138,0.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #0F172A 0%, #00897B 60%, #26A69A 100%);
+  background: linear-gradient(135deg, #0D1F5C 0%, #1B3B8A 50%, #E8611A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
