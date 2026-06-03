@@ -161,19 +161,19 @@ export default function Home() {
             <p className="text-[#64748B] max-w-xl mx-auto text-lg">Du câblage à la mise en service, nous intervenons sur tous vos équipements GTB.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, i) => (
               <div
                 key={service.title}
-                className={`group bg-white border border-[#E2E8F0] hover:border-[#00897B]/40 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-[#00897B]/8 hover:-translate-y-1 cursor-default ${
+                className={`group bg-white border border-[#E2E8F0] hover:border-[#00897B]/40 rounded-2xl p-10 transition-all duration-300 hover:shadow-xl hover:shadow-[#00897B]/8 hover:-translate-y-1 cursor-default ${
                   servicesInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="w-12 h-12 bg-[#00897B]/8 group-hover:bg-[#00897B]/15 rounded-xl flex items-center justify-center text-[#00897B] mb-6 transition-colors duration-300">
+                <div className="w-14 h-14 bg-[#00897B]/8 group-hover:bg-[#00897B]/15 rounded-xl flex items-center justify-center text-[#00897B] mb-7 transition-colors duration-300">
                   {service.icon}
                 </div>
-                <h3 className="font-bold text-[#0F172A] text-lg mb-3">{service.title}</h3>
+                <h3 className="font-bold text-[#0F172A] text-lg mb-4">{service.title}</h3>
                 <p className="text-[#64748B] text-sm leading-relaxed">{service.desc}</p>
               </div>
             ))}
@@ -196,19 +196,19 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-black text-[#0F172A] mt-3">Ils nous font confiance</h2>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {clients.map((client, i) => (
               <div
                 key={client.name}
-                className={`bg-white border border-[#E2E8F0] hover:border-[#00897B]/30 rounded-2xl p-6 flex flex-col items-center gap-3 transition-all duration-300 hover:shadow-lg hover:shadow-[#00897B]/8 ${
+                className={`bg-white border border-[#E2E8F0] hover:border-[#00897B]/30 rounded-2xl p-8 flex flex-col items-center gap-4 transition-all duration-300 hover:shadow-lg hover:shadow-[#00897B]/8 ${
                   clientsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
-                <div className="w-12 h-12 bg-[#0F172A] rounded-xl flex items-center justify-center">
+                <div className="w-14 h-14 bg-[#0F172A] rounded-xl flex items-center justify-center">
                   <span className="text-white font-black text-xs tracking-wider">{client.initiales}</span>
                 </div>
-                <p className="text-[#64748B] text-xs font-medium text-center">{client.name}</p>
+                <p className="text-[#64748B] text-xs font-medium text-center leading-relaxed">{client.name}</p>
               </div>
             ))}
           </div>
