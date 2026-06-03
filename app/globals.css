@@ -15,8 +15,10 @@
   --text-muted: #64748B;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+}
 
 body {
   background: var(--bg);

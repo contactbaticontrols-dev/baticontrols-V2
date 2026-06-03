@@ -62,10 +62,10 @@ export default function APropos() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {valeurs.map((v) => (
-              <div key={v.title} className="bg-white border border-[#E2E8F0] hover:border-[#00897B]/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-md">
-                <div className="w-14 h-14 bg-[#00897B]/10 rounded-xl flex items-center justify-center text-[#00897B] mb-6">{v.icon}</div>
-                <h3 className="font-bold text-[#0F172A] mb-3">{v.title}</h3>
-                <p className="text-[#64748B] text-sm leading-relaxed">{v.desc}</p>
+              <div key={v.title} className="bg-white border border-[#E2E8F0] hover:border-[#00897B]/50 rounded-2xl p-10 transition-all duration-300 hover:shadow-md">
+                <div className="w-14 h-14 bg-[#00897B]/10 rounded-xl flex items-center justify-center text-[#00897B] mb-8">{v.icon}</div>
+                <h3 className="font-bold text-[#0F172A] mb-4">{v.title}</h3>
+                <p className="text-[#64748B] text-sm leading-loose">{v.desc}</p>
               </div>
             ))}
           </div>

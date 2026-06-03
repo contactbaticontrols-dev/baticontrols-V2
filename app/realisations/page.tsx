@@ -54,29 +54,30 @@ export default function Realisations() {
       {/* Cards */}
       <section className="py-24 bg-[#F8FAFB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {realisations.map((r) => (
-              <div key={r.client} className={`bg-white rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 ${
+              <div key={r.client} className={`bg-white rounded-2xl p-10 border transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 ${
                 r.highlight ? 'border-[#00897B] shadow-md shadow-[#00897B]/10' : 'border-[#E2E8F0] hover:border-[#00897B]/40'
               }`}>
                 {r.highlight && (
-                  <span className="inline-block bg-[#00897B] text-white text-xs font-bold px-3 py-1.5 rounded-full mb-5 uppercase tracking-wide">
+                  <span className="inline-block bg-[#00897B] text-white text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-wide">
                     Grand chantier
                   </span>
                 )}
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="w-14 h-14 bg-[#F1F5F9] rounded-xl flex items-center justify-center border border-[#E2E8F0] shrink-0">
+                <div className="flex items-center gap-5 mb-6">
+                  <div className="w-16 h-16 bg-[#F1F5F9] rounded-2xl flex items-center justify-center border border-[#E2E8F0] shrink-0">
                     <span className="text-[#00897B] font-black text-xs tracking-wider">{r.initiales}</span>
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#0F172A] text-sm leading-snug">{r.client}</h3>
-                    <p className="text-[#00897B] text-xs mt-1">{r.secteur}</p>
+                    <h3 className="font-bold text-[#0F172A] text-base leading-snug">{r.client}</h3>
+                    <p className="text-[#00897B] text-sm mt-1">{r.secteur}</p>
                   </div>
                 </div>
-                <p className="text-[#64748B] text-sm leading-relaxed mb-5">{r.desc}</p>
+                <div className="border-t border-[#F1F5F9] mb-6" />
+                <p className="text-[#64748B] text-sm leading-loose mb-7">{r.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {r.tags.map((tag) => (
-                    <span key={tag} className="text-xs text-[#64748B] border border-[#E2E8F0] bg-[#F8FAFB] px-3 py-1.5 rounded-full">{tag}</span>
+                    <span key={tag} className="text-xs text-[#64748B] border border-[#E2E8F0] bg-[#F8FAFB] px-4 py-2 rounded-full">{tag}</span>
                   ))}
                 </div>
               </div>

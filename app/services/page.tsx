@@ -91,9 +91,9 @@ export default function Services() {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
             {protocols.map((p) => (
-              <div key={p.name} className="bg-white border border-[#E2E8F0] hover:border-[#00897B]/50 rounded-xl p-7 transition-all duration-300 hover:shadow-md">
-                <p className="font-black text-[#0F172A] text-lg mb-2">{p.name}</p>
-                <p className="text-[#64748B] text-sm leading-relaxed">{p.desc}</p>
+              <div key={p.name} className="bg-white border border-[#E2E8F0] hover:border-[#00897B]/50 rounded-xl p-8 transition-all duration-300 hover:shadow-md">
+                <p className="font-black text-[#0F172A] text-lg mb-3">{p.name}</p>
+                <p className="text-[#64748B] text-sm leading-loose">{p.desc}</p>
               </div>
             ))}
           </div>

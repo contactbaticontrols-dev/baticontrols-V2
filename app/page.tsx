@@ -161,20 +161,20 @@ export default function Home() {
             <p className="text-[#64748B] max-w-xl mx-auto text-lg">Du câblage à la mise en service, nous intervenons sur tous vos équipements GTB.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {services.map((service, i) => (
               <div
                 key={service.title}
-                className={`group bg-white border border-[#E2E8F0] hover:border-[#00897B]/40 rounded-2xl p-10 transition-all duration-300 hover:shadow-xl hover:shadow-[#00897B]/8 hover:-translate-y-1 cursor-default ${
+                className={`group bg-white border border-[#E2E8F0] hover:border-[#00897B]/40 rounded-2xl p-12 transition-all duration-300 hover:shadow-xl hover:shadow-[#00897B]/8 hover:-translate-y-1 cursor-default ${
                   servicesInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="w-14 h-14 bg-[#00897B]/8 group-hover:bg-[#00897B]/15 rounded-xl flex items-center justify-center text-[#00897B] mb-7 transition-colors duration-300">
+                <div className="w-14 h-14 bg-[#00897B]/8 group-hover:bg-[#00897B]/15 rounded-xl flex items-center justify-center text-[#00897B] mb-8 transition-colors duration-300">
                   {service.icon}
                 </div>
-                <h3 className="font-bold text-[#0F172A] text-lg mb-4">{service.title}</h3>
-                <p className="text-[#64748B] text-sm leading-relaxed">{service.desc}</p>
+                <h3 className="font-bold text-[#0F172A] text-lg mb-5">{service.title}</h3>
+                <p className="text-[#64748B] text-sm leading-loose">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -200,12 +200,12 @@ export default function Home() {
             {clients.map((client, i) => (
               <div
                 key={client.name}
-                className={`bg-white border border-[#E2E8F0] hover:border-[#00897B]/30 rounded-2xl p-8 flex flex-col items-center gap-4 transition-all duration-300 hover:shadow-lg hover:shadow-[#00897B]/8 ${
+                className={`bg-white border border-[#E2E8F0] hover:border-[#00897B]/30 rounded-2xl p-10 flex flex-col items-center gap-5 transition-all duration-300 hover:shadow-lg hover:shadow-[#00897B]/8 ${
                   clientsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
-                <div className="w-14 h-14 bg-[#0F172A] rounded-xl flex items-center justify-center">
+                <div className="w-16 h-16 bg-[#0F172A] rounded-2xl flex items-center justify-center">
                   <span className="text-white font-black text-xs tracking-wider">{client.initiales}</span>
                 </div>
                 <p className="text-[#64748B] text-xs font-medium text-center leading-relaxed">{client.name}</p>
