@@ -1,71 +1,39 @@
 import Link from 'next/link';
 
-const hotels = [
-  // 4 étoiles
-  { name: "Hôtel Le Grand Large", ville: "Pornic", stars: 4, desc: "Supervision GTB complète, régulation CVC par suite, gestion éclairage LED dimmable et comptage énergie en temps réel. Vue mer, 85 chambres.", tags: ["GTB", "CVC", "LED", "Énergie"] },
-  { name: "Hôtel Château des Ducs", ville: "Nantes", stars: 4, desc: "Déploiement BACnet/Modbus, régulation chaufferie, vannes motorisées et supervision centralisée des 120 chambres en centre-ville.", tags: ["BACnet", "CVC", "Supervision"] },
-  { name: "Hôtel Atlantique Thalasso", ville: "Pornic", stars: 4, desc: "Installation KNX haut de gamme, gestion automatisée CVC par chambre, supervision spa & thalasso et optimisation énergétique globale.", tags: ["KNX", "CVC", "Spa", "Énergie"] },
-  { name: "Hôtel le Mercure Centre", ville: "Nantes", stars: 4, desc: "Système GTB complet, régulation thermique par zone, comptage énergie et supervision centralisée pour 98 chambres.", tags: ["GTB", "CVC", "Énergie"] },
-  // Châteaux classés MH
-  { name: "Château-Hôtel de la Seilleraye", ville: "Carquefou (44)", stars: 4, desc: "Monument Historique classé — intégration GTB discrète respectant l'architecture. Régulation chaufferie basse température, supervision énergétique et éclairage LED patrimonial.", tags: ["MH", "GTB", "Patrimoine", "LED"], mh: true },
-  { name: "Château de la Mercredière", ville: "Vigneux-de-Bretagne (44)", stars: 3, desc: "Monument Historique — câblage GTB discret, régulation thermique des salles de réception et chambres, supervision énergétique.", tags: ["MH", "GTB", "CVC"], mh: true },
-  { name: "Château des Briottières", ville: "Champigné (49)", stars: 3, desc: "Demeure classée — installation GTB adaptée au bâtiment ancien, gestion chauffage basse température et comptage énergie.", tags: ["MH", "Chauffage", "GTB"], mh: true },
-  // 3 étoiles
-  { name: "Hôtel Le Régent", ville: "Pornic", stars: 3, desc: "Mise en service supervision GTB, régulation chaufferie et gestion des équipements thermiques des 52 chambres.", tags: ["GTB", "Chaufferie"] },
-  { name: "Hôtel La Plage", ville: "Pornic", stars: 3, desc: "Raccordement compteurs énergie communicants, supervision Modbus et optimisation des consommations.", tags: ["Modbus", "Énergie"] },
-  { name: "Hôtel Les Sablons", ville: "Pornic", stars: 3, desc: "Installation capteurs IoT WATTSENS, supervision énergétique et régulation CVC parties communes.", tags: ["IoT", "CVC", "Énergie"] },
-  { name: "Hôtel Kyriad Centre", ville: "Nantes", stars: 3, desc: "Câblage GTB complet, pose vannes thermostatiques et mise en service régulateurs de chaufferie sur 75 chambres.", tags: ["GTB", "Vannes", "Chaufferie"] },
-  { name: "Hôtel Ibis Styles", ville: "Nantes Nord", stars: 3, desc: "Supervision centralisée GTB, gestion éclairage LED dimmable et comptage énergie.", tags: ["GTB", "LED", "Énergie"] },
-  { name: "Hôtel le Saint-Gilles", ville: "Pornic", stars: 3, desc: "Modernisation installations électriques, pose contacteurs et raccordement GTB supervision.", tags: ["GTB", "Électrique"] },
-  // 2 étoiles
-  { name: "Hôtel Le Belem", ville: "Nantes", stars: 2, desc: "Installation GTB, câblage et mise en service des équipements de supervision thermique.", tags: ["GTB", "CVC"] },
-  { name: "Hôtel de l'Océan", ville: "Pornic", stars: 2, desc: "Déploiement compteurs énergie communicants et supervision GTB des équipements techniques.", tags: ["GTB", "Énergie"] },
-  { name: "Hôtel les Cormorans", ville: "Pornic", stars: 2, desc: "Câblage GTB, régulation thermique et gestion fil pilote 6 ordres pour les chambres.", tags: ["GTB", "Fil pilote"] },
+const hotellerieGroupes = [
+  {
+    categorie: "Hôtels 4 étoiles",
+    nb: 4,
+    lieux: "Nantes & Pornic",
+    desc: "Déploiement GTB/CVC complet sur 4 établissements haut de gamme : supervision centralisée, régulation thermique par chambre, gestion éclairage LED dimmable, comptage énergie en temps réel et optimisation des consommations.",
+    tags: ["GTB", "CVC", "KNX", "BACnet", "LED", "Énergie"],
+    accent: true,
+  },
+  {
+    categorie: "Châteaux classés Monuments Historiques",
+    nb: 3,
+    lieux: "Loire-Atlantique & Maine-et-Loire",
+    desc: "Intégration GTB discrète et respectueuse du patrimoine sur 3 châteaux classés. Régulation chaufferie basse température, supervision énergétique et éclairage LED patrimonial adaptés aux contraintes des bâtiments historiques.",
+    tags: ["Monument Historique", "GTB", "Patrimoine", "Chauffage BT"],
+    accent: false,
+    mh: true,
+  },
+  {
+    categorie: "Hôtels 2 & 3 étoiles",
+    nb: 9,
+    lieux: "Nantes & Pornic",
+    desc: "Installation GTB, câblage et mise en service sur 9 établissements. Gestion chaufferie, vannes thermostatiques, comptage énergie et supervision des équipements techniques.",
+    tags: ["GTB", "CVC", "Modbus", "Énergie", "Câblage"],
+    accent: false,
+  },
 ];
 
 const autres = [
-  {
-    client: "Sport 2000",
-    secteur: "Retail & Sport",
-    desc: "Déploiement GTB et supervision énergétique sur plusieurs enseignes en France.",
-    tags: ["GTB", "Retail", "Énergie"],
-    highlight: false,
-  },
-  {
-    client: "Intersport",
-    secteur: "Retail & Sport",
-    desc: "Installation GTB sur plusieurs magasins. Supervision CVC, éclairage LED dimmable et comptage énergie.",
-    tags: ["GTB", "Retail", "CVC"],
-    highlight: false,
-  },
-  {
-    client: "UTTI de Tourcoing",
-    secteur: "Tertiaire — 90 000 m²",
-    desc: "Installation GTB sur 90 000 m² — l'un de nos plus grands chantiers tertiaires.",
-    tags: ["GTB", "90 000 m²", "Tertiaire"],
-    highlight: true,
-  },
-  {
-    client: "E.Leclerc / Carrefour",
-    secteur: "Grande Distribution",
-    desc: "Déploiement GTB et supervision énergétique sur hypermarchés. Régulation CVC, comptage énergie et gestion équipements frigorifiques.",
-    tags: ["GTB", "Grande Distribution", "CVC"],
-    highlight: false,
-  },
-  {
-    client: "Entrepôts Logistiques",
-    secteur: "Logistique & Industrie",
-    desc: "GTB et supervision énergétique sur plusieurs entrepôts. Gestion aérothermes, déstratificateurs et régulation thermique grands volumes.",
-    tags: ["GTB", "Logistique", "Aérothermes"],
-    highlight: false,
-  },
-  {
-    client: "Studio de cinéma",
-    secteur: "Audiovisuel & Culture",
-    desc: "Mise en service équipements GTB d'un studio de cinéma professionnel à Le Perray-en-Yvelines.",
-    tags: ["GTB", "Culture"],
-    highlight: false,
-  },
+  { client: "Sport 2000 & Intersport", secteur: "Retail & Sport", desc: "Déploiement GTB et supervision énergétique sur plusieurs enseignes en France. Gestion CVC des surfaces de vente et comptage énergie.", tags: ["GTB", "Retail", "Énergie"], highlight: false },
+  { client: "UTTI de Tourcoing", secteur: "Tertiaire — 90 000 m²", desc: "Installation GTB sur 90 000 m² — l'un de nos plus grands chantiers tertiaires.", tags: ["GTB", "90 000 m²", "Tertiaire"], highlight: true },
+  { client: "E.Leclerc / Carrefour", secteur: "Grande Distribution", desc: "GTB et supervision énergétique sur plusieurs hypermarchés. Régulation CVC, comptage énergie et gestion équipements frigorifiques.", tags: ["GTB", "Grande Distribution", "CVC"], highlight: false },
+  { client: "Entrepôts Logistiques", secteur: "Logistique & Industrie", desc: "GTB sur plusieurs entrepôts. Gestion aérothermes, déstratificateurs et régulation thermique des grands volumes.", tags: ["GTB", "Logistique", "Aérothermes"], highlight: false },
+  { client: "Studio de cinéma", secteur: "Audiovisuel — Le Perray-en-Yvelines", desc: "Mise en service équipements GTB d'un studio de cinéma professionnel.", tags: ["GTB", "Culture"], highlight: false },
 ];
 
 const stats = [
@@ -75,23 +43,7 @@ const stats = [
   { value: "90 000 m²", label: "UTTI Tourcoing" },
 ];
 
-const StarRating = ({ stars }: { stars: number }) => (
-  <div className="flex items-center gap-0.5">
-    {Array.from({ length: stars }).map((_, i) => (
-      <svg key={i} className={`w-3.5 h-3.5 ${stars === 4 ? 'text-[#E8611A]' : 'text-[#94A3B8]'}`} fill="currentColor" viewBox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-      </svg>
-    ))}
-  </div>
-);
-
-type Hotel = { name: string; ville: string; stars: number; desc: string; tags: string[]; mh?: boolean };
-
 export default function Realisations() {
-  const hotels4etoiles = hotels.filter((h: Hotel) => h.stars === 4 && !h.mh);
-  const chateaux = hotels.filter((h: Hotel) => h.mh);
-  const hotelsAutres = hotels.filter((h: Hotel) => h.stars !== 4 && !h.mh);
-
   return (
     <>
       {/* Header */}
@@ -118,7 +70,7 @@ export default function Realisations() {
         </div>
       </section>
 
-      {/* Section Hôtellerie — 4 étoiles mis en avant */}
+      {/* Hôtellerie */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-14">
@@ -127,95 +79,50 @@ export default function Realisations() {
             </div>
             <div>
               <span className="text-[#E8611A] font-semibold text-sm uppercase tracking-widest block">Secteur prioritaire</span>
-              <h2 className="text-3xl font-black text-[#0D1F5C]">Hôtellerie — {hotels.length} établissements</h2>
+              <h2 className="text-3xl font-black text-[#0D1F5C]">Hôtellerie — 16 établissements</h2>
             </div>
           </div>
 
-          {/* Hôtels 4 étoiles */}
-          <div className="mb-10">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex gap-0.5">
-                {[1,2,3,4].map(i => <svg key={i} className="w-4 h-4 text-[#E8611A]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>)}
-              </div>
-              <h3 className="font-black text-[#0D1F5C] text-lg">Hôtels 4 étoiles</h3>
-              <span className="bg-[#E8611A] text-white text-xs font-bold px-3 py-1 rounded-full">{hotels4etoiles.length} établissements</span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {hotels4etoiles.map((h) => (
-                <div key={h.name} className="bg-white border-2 border-[#E8611A]/30 rounded-2xl p-8 hover:border-[#E8611A] hover:shadow-lg hover:shadow-[#E8611A]/10 transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="flex items-start justify-between mb-4">
-                    <StarRating stars={h.stars} />
-                    <span className="text-xs text-[#5A6B9A] font-medium">{h.ville}</span>
-                  </div>
-                  <h4 className="font-bold text-[#0D1F5C] text-base mb-3 leading-snug">{h.name}</h4>
-                  <p className="text-[#5A6B9A] text-xs leading-relaxed mb-4">{h.desc}</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {h.tags.map(t => (
-                      <span key={t} className="text-xs text-[#E8611A] border border-[#E8611A]/30 bg-[#E8611A]/5 px-2.5 py-1 rounded-full">{t}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Châteaux — Monuments Historiques */}
-          <div className="mb-10">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-[#1B3B8A]/10 rounded-lg flex items-center justify-center">
-                <svg className="w-4 h-4 text-[#1B3B8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" /></svg>
-              </div>
-              <h3 className="font-black text-[#0D1F5C] text-lg">Châteaux classés Monuments Historiques</h3>
-              <span className="bg-[#1B3B8A] text-white text-xs font-bold px-3 py-1 rounded-full">{chateaux.length} châteaux</span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {chateaux.map((h: Hotel) => (
-                <div key={h.name} className="bg-white border-2 border-[#1B3B8A]/20 rounded-2xl p-8 hover:border-[#1B3B8A]/50 hover:shadow-lg hover:shadow-[#1B3B8A]/8 transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="inline-flex items-center gap-1.5 bg-[#1B3B8A] text-white text-xs font-bold px-3 py-1 rounded-full">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {hotellerieGroupes.map((g) => (
+              <div key={g.categorie} className={`rounded-2xl p-10 border-2 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl ${
+                g.accent
+                  ? 'border-[#E8611A]/40 bg-white hover:shadow-[#E8611A]/10'
+                  : g.mh
+                  ? 'border-[#1B3B8A]/30 bg-white hover:shadow-[#1B3B8A]/10'
+                  : 'border-[#D1DAFB] bg-white hover:border-[#1B3B8A]/30'
+              }`}>
+                <div className="flex items-start justify-between mb-6">
+                  <div className={`text-4xl font-black ${g.accent ? 'text-[#E8611A]' : 'text-[#1B3B8A]'}`}>{g.nb}</div>
+                  {g.mh && (
+                    <span className="inline-flex items-center gap-1.5 bg-[#1B3B8A] text-white text-xs font-bold px-3 py-1.5 rounded-full">
                       <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 2a1 1 0 01.894.553l1.618 3.272 3.611.526a1 1 0 01.554 1.706l-2.614 2.548.617 3.598a1 1 0 01-1.45 1.054L10 13.693l-3.23 1.698a1 1 0 01-1.45-1.054l.617-3.598L3.323 8.057a1 1 0 01.554-1.706l3.611-.526L9.106 2.553A1 1 0 0110 2z" clipRule="evenodd" /></svg>
-                      Monument Historique
+                      MH
                     </span>
-                    <span className="text-xs text-[#5A6B9A] font-medium">{h.ville}</span>
-                  </div>
-                  <h4 className="font-bold text-[#0D1F5C] text-base mb-3 leading-snug">{h.name}</h4>
-                  <p className="text-[#5A6B9A] text-sm leading-relaxed mb-4">{h.desc}</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {h.tags.map((t: string) => (
-                      <span key={t} className={`text-xs font-medium px-2.5 py-1 rounded-full border ${t === 'MH' ? 'text-[#1B3B8A] border-[#1B3B8A]/30 bg-[#1B3B8A]/5' : 'text-[#5A6B9A] border-[#D1DAFB] bg-[#F0F4FF]'}`}>{t}</span>
-                    ))}
-                  </div>
+                  )}
+                  {g.accent && (
+                    <div className="flex gap-0.5">
+                      {[1,2,3,4].map(i => (
+                        <svg key={i} className="w-4 h-4 text-[#E8611A]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Autres hôtels */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex gap-0.5">
-                {[1,2,3].map(i => <svg key={i} className="w-4 h-4 text-[#94A3B8]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>)}
+                <h3 className="font-black text-[#0D1F5C] text-xl mb-2">{g.categorie}</h3>
+                <p className={`text-sm font-semibold mb-5 ${g.accent ? 'text-[#E8611A]' : 'text-[#1B3B8A]'}`}>{g.lieux}</p>
+                <div className="border-t border-[#F0F4FF] mb-5" />
+                <p className="text-[#5A6B9A] text-sm leading-loose mb-6">{g.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {g.tags.map(t => (
+                    <span key={t} className={`text-xs px-3 py-1.5 rounded-full border ${
+                      g.accent ? 'text-[#E8611A] border-[#E8611A]/25 bg-[#E8611A]/5' :
+                      g.mh ? 'text-[#1B3B8A] border-[#1B3B8A]/25 bg-[#1B3B8A]/5' :
+                      'text-[#5A6B9A] border-[#D1DAFB] bg-[#F0F4FF]'
+                    }`}>{t}</span>
+                  ))}
+                </div>
               </div>
-              <h3 className="font-black text-[#0D1F5C] text-lg">Hôtels 2 & 3 étoiles</h3>
-              <span className="bg-[#1B3B8A]/10 text-[#1B3B8A] text-xs font-bold px-3 py-1 rounded-full">{hotelsAutres.length} établissements</span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-              {hotelsAutres.map((h) => (
-                <div key={h.name} className="bg-white border border-[#D1DAFB] rounded-2xl p-7 hover:border-[#1B3B8A]/40 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="flex items-start justify-between mb-3">
-                    <StarRating stars={h.stars} />
-                    <span className="text-xs text-[#5A6B9A]">{h.ville}</span>
-                  </div>
-                  <h4 className="font-bold text-[#0D1F5C] text-sm mb-2 leading-snug">{h.name}</h4>
-                  <p className="text-[#5A6B9A] text-xs leading-relaxed mb-3">{h.desc}</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {h.tags.map(t => (
-                      <span key={t} className="text-xs text-[#5A6B9A] border border-[#D1DAFB] bg-[#F0F4FF] px-2.5 py-1 rounded-full">{t}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -233,9 +140,7 @@ export default function Realisations() {
                 r.highlight ? 'border-[#E8611A] shadow-md shadow-[#E8611A]/10' : 'border-[#D1DAFB] hover:border-[#1B3B8A]/40'
               }`}>
                 {r.highlight && (
-                  <span className="inline-block bg-[#E8611A] text-white text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-wide">
-                    Grand chantier
-                  </span>
+                  <span className="inline-block bg-[#E8611A] text-white text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-wide">Grand chantier</span>
                 )}
                 <div className="mb-5">
                   <h3 className="font-bold text-[#0D1F5C] text-lg leading-snug">{r.client}</h3>
