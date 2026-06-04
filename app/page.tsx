@@ -43,14 +43,18 @@ const services = [
 ];
 
 const clients = [
-  { initiales: "ST", name: "Stellantis / Peugeot" },
-  { initiales: "PO", name: "Porsche" },
-  { initiales: "MB", name: "Mercedes" },
-  { initiales: "S2K", name: "Sport 2000" },
-  { initiales: "CDC", name: "CDC Habitat" },
-  { initiales: "OCC", name: "Région Occitanie" },
-  { initiales: "GA", name: "Grand Annecy" },
-  { initiales: "CSTB", name: "CSTB" },
+  { name: "Sport 2000" },
+  { name: "Intersport" },
+  { name: "E.Leclerc" },
+  { name: "Carrefour" },
+  { name: "PASSMAN" },
+  { name: "Loxone" },
+  { name: "UTTI Tourcoing" },
+  { name: "Grand Annecy" },
+  { name: "Région Occitanie" },
+  { name: "CSTB" },
+  { name: "CDC Habitat" },
+  { name: "..." },
 ];
 
 function StatsSection() {
@@ -240,15 +244,26 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-black text-[#0D1F5C] mt-3">Ils nous font confiance</h2>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
             {clients.map((client, i) => (
-              <div
-                key={client.name}
-                className={`bg-white border border-[#D1DAFB] hover:border-[#1B3B8A]/40 rounded-2xl p-8 flex items-center justify-center transition-all duration-300 hover:shadow-lg min-h-[80px] ${clientsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                style={{ transitionDelay: `${i * 60}ms` }}
-              >
-                <p className="text-[#0D1F5C] text-sm font-bold text-center leading-snug">{client.name}</p>
-              </div>
+              client.name === '...' ? (
+                <div
+                  key="placeholder"
+                  className={`border-2 border-dashed border-[#D1DAFB] rounded-2xl p-8 flex flex-col items-center justify-center gap-2 min-h-[80px] ${clientsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={{ transitionDelay: `${i * 60}ms` }}
+                >
+                  <svg className="w-5 h-5 text-[#D1DAFB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
+                  <p className="text-[#94A3B8] text-xs text-center">Prochain client</p>
+                </div>
+              ) : (
+                <div
+                  key={client.name}
+                  className={`bg-white border border-[#D1DAFB] hover:border-[#1B3B8A]/40 rounded-2xl p-8 flex items-center justify-center transition-all duration-300 hover:shadow-md min-h-[80px] ${clientsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={{ transitionDelay: `${i * 60}ms` }}
+                >
+                  <p className="text-[#0D1F5C] text-sm font-bold text-center leading-snug">{client.name}</p>
+                </div>
+              )
             ))}
           </div>
 

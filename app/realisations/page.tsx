@@ -16,6 +16,13 @@ const realisations = [
     highlight: false,
   },
   {
+    client: "Intersport",
+    secteur: "Retail & Sport",
+    desc: "Installation GTB et gestion énergétique sur plusieurs magasins Intersport. Supervision des équipements CVC, éclairage LED dimmable et comptage énergie.",
+    tags: ["GTB", "Retail", "CVC", "Éclairage"],
+    highlight: false,
+  },
+  {
     client: "UTTI de Tourcoing",
     secteur: "Tertiaire — 90 000 m²",
     desc: "Installation GTB sur 90 000 m² — l'un de nos plus grands chantiers tertiaires.",
