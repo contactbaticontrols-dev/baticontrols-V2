@@ -1,28 +1,48 @@
 import Link from 'next/link';
 
 const realisations = [
-  { client: "Stellantis / Peugeot", secteur: "Industrie Automobile", initiales: "ST", desc: "Installation et mise en service de systèmes GTB sur sites du groupe Stellantis.", tags: ["GTB", "Câblage", "Mise en service"], highlight: false },
-  { client: "Porsche", secteur: "Industrie Automobile", initiales: "PO", desc: "Déploiement de solutions GTB pour la gestion technique des installations.", tags: ["GTB", "Protocoles"], highlight: false },
-  { client: "Mercedes", secteur: "Industrie Automobile", initiales: "MB", desc: "Câblage et raccordement d'équipements GTB pour les sites Mercedes en France.", tags: ["GTB", "Câblage"], highlight: false },
-  { client: "Garage BPM", secteur: "Automobile", initiales: "BPM", desc: "Installation complète d'un système de gestion technique bâtiment.", tags: ["GTB", "Installation"], highlight: false },
-  { client: "Sport 2000", secteur: "Retail & Sport", initiales: "S2K", desc: "Déploiement GTB et supervision énergétique sur plusieurs enseignes Sport 2000 en France.", tags: ["GTB", "Retail", "Énergie"], highlight: false },
-  { client: "CDC Habitat", secteur: "Immobilier & Copropriétés", initiales: "CDC", desc: "Déploiement GTC pour CDC Habitat et plus de 15 copropriétés en France.", tags: ["GTC", "Supervision"], highlight: false },
-  { client: "+30 Collèges & Écoles — IDF", secteur: "Éducation nationale", initiales: "IDF", desc: "Installation GTB dans plus de 30 établissements scolaires en Île-de-France.", tags: ["GTB", "IDF"], highlight: false },
-  { client: "1 Mairie", secteur: "Secteur Public", initiales: "M", desc: "Gestion technique du bâtiment pour une collectivité locale.", tags: ["GTB", "Public"], highlight: false },
-  { client: "5 Centres des Finances Publiques", secteur: "Secteur Public", initiales: "DGFiP", desc: "Déploiement GTB sur 5 centres des finances publiques.", tags: ["GTB", "Énergie"], highlight: false },
-  { client: "UTTI de Tourcoing", secteur: "Tertiaire — 90 000 m²", initiales: "UTTI", desc: "Installation GTB sur 90 000 m² — l'un de nos plus grands chantiers.", tags: ["GTB", "90 000 m²"], highlight: true },
-  { client: "Studio de cinéma — Le Perray-en-Yvelines", secteur: "Audiovisuel & Culture", initiales: "SC", desc: "Mise en service des équipements GTB d'un studio de cinéma professionnel.", tags: ["GTB", "Culture"], highlight: false },
-  { client: "Région Occitanie", secteur: "Collectivité Territoriale", initiales: "OCC", desc: "Prestation GTB pour les bâtiments de la Région Occitanie.", tags: ["GTB", "Région"], highlight: false },
-  { client: "Grand Annecy", secteur: "Collectivité Territoriale", initiales: "GA", desc: "Installation GTB pour la communauté d'agglomération du Grand Annecy.", tags: ["GTB", "Collectivité"], highlight: false },
-  { client: "Entrepôts Petit Bateau", secteur: "Logistique & Industrie", initiales: "PB", desc: "Câblage et mise en service GTB des entrepôts logistiques.", tags: ["GTB", "Logistique"], highlight: false },
-  { client: "CSTB", secteur: "Recherche & Expertise", initiales: "CSTB", desc: "Déploiement GTC pour le Centre Scientifique et Technique du Bâtiment.", tags: ["GTC", "Recherche"], highlight: false },
+  {
+    client: "Hôtel 4 étoiles",
+    secteur: "Hôtellerie",
+    desc: "Déploiement complet d'une solution GTB/CVC pour un hôtel 4 étoiles : supervision centralisée, régulation thermique par chambre, gestion de l'éclairage LED dimmable et optimisation énergétique globale.",
+    tags: ["GTB", "CVC", "Hôtellerie", "Énergie"],
+    highlight: true,
+  },
+  {
+    client: "Sport 2000",
+    secteur: "Retail & Sport",
+    desc: "Déploiement GTB et supervision énergétique sur plusieurs enseignes Sport 2000 en France.",
+    tags: ["GTB", "Retail", "Énergie"],
+    highlight: false,
+  },
+  {
+    client: "UTTI de Tourcoing",
+    secteur: "Tertiaire — 90 000 m²",
+    desc: "Installation GTB sur 90 000 m² — l'un de nos plus grands chantiers tertiaires.",
+    tags: ["GTB", "90 000 m²", "Tertiaire"],
+    highlight: true,
+  },
+  {
+    client: "Studio de cinéma — Le Perray-en-Yvelines",
+    secteur: "Audiovisuel & Culture",
+    desc: "Mise en service des équipements GTB d'un studio de cinéma professionnel.",
+    tags: ["GTB", "Culture"],
+    highlight: false,
+  },
+  {
+    client: "Entrepôts Petit Bateau",
+    secteur: "Logistique & Industrie",
+    desc: "Câblage et mise en service GTB des entrepôts logistiques.",
+    tags: ["GTB", "Logistique"],
+    highlight: false,
+  },
 ];
 
 const stats = [
   { value: "15+", label: "Références majeures" },
   { value: "90 000 m²", label: "UTTI Tourcoing" },
-  { value: "30+", label: "Établissements scolaires" },
-  { value: "15+", label: "Copropriétés GTC" },
+  { value: "8", label: "Experts GTB/CVC" },
+  { value: "Toute", label: "la France" },
 ];
 
 export default function Realisations() {
@@ -34,7 +54,7 @@ export default function Realisations() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <span className="text-[#E8611A] font-semibold text-sm uppercase tracking-widest">Portfolio</span>
           <h1 className="text-4xl sm:text-5xl font-black text-[#0D1F5C] mt-2 mb-4">Nos réalisations</h1>
-          <p className="text-[#5A6B9A] text-lg max-w-2xl">Industrie automobile, secteur public, éducation — partout en France.</p>
+          <p className="text-[#5A6B9A] text-lg max-w-2xl">Hôtellerie, retail, tertiaire, industrie — partout en France.</p>
         </div>
       </section>
 
@@ -62,17 +82,12 @@ export default function Realisations() {
               }`}>
                 {r.highlight && (
                   <span className="inline-block bg-[#E8611A] text-white text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-wide">
-                    Grand chantier
+                    Référence majeure
                   </span>
                 )}
-                <div className="flex items-center gap-5 mb-6">
-                  <div className="w-16 h-16 bg-[#0D1F5C] rounded-2xl flex items-center justify-center border border-[#D1DAFB] shrink-0">
-                    <span className="text-white font-black text-xs tracking-wider">{r.initiales}</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#0D1F5C] text-base leading-snug">{r.client}</h3>
-                    <p className="text-[#1B3B8A] text-sm mt-1">{r.secteur}</p>
-                  </div>
+                <div className="mb-5">
+                  <h3 className="font-bold text-[#0D1F5C] text-lg leading-snug">{r.client}</h3>
+                  <p className="text-[#1B3B8A] text-sm mt-1 font-medium">{r.secteur}</p>
                 </div>
                 <div className="border-t border-[#F0F4FF] mb-6" />
                 <p className="text-[#5A6B9A] text-sm leading-loose mb-7">{r.desc}</p>
@@ -94,7 +109,7 @@ export default function Realisations() {
         </div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl font-black text-white mb-4">Votre projet sera notre prochaine réalisation</h2>
-          <p className="text-blue-200 mb-8">Contactez-nous pour discuter de vos besoins GTB.</p>
+          <p className="text-blue-200 mb-8">Contactez-nous pour discuter de vos besoins GTB/CVC.</p>
           <Link href="/contact" className="bg-[#E8611A] hover:bg-[#C24D10] text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 cursor-pointer inline-block shadow-lg shadow-[#E8611A]/25">
             Demander un devis
           </Link>

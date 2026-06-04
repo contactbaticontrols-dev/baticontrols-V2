@@ -31,7 +31,7 @@ function useInView(threshold = 0.2) {
   return { ref, inView };
 }
 
-const protocols = ["KNX", "BACnet", "Modbus", "Zigbee", "LoRa", "LOXONE", "Node-RED", "WATTSENS"];
+const protocols = ["KNX", "BACnet", "Modbus", "Zigbee", "LoRa", "LOXONE", "Node-RED"];
 
 const services = [
   { title: "Comptage Énergie", desc: "Mesure, supervision et raccordement des installations pour une performance énergétique maîtrisée.", icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> },
@@ -193,7 +193,9 @@ export default function Home() {
 
           <div className={`mb-10 transition-all duration-700 delay-100 ${secteursInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="bg-[#0D1F5C] rounded-2xl p-10 flex flex-col md:flex-row items-center gap-8">
-              <div className="text-6xl shrink-0">🏨</div>
+              <div className="w-16 h-16 bg-[#E8611A]/20 rounded-2xl flex items-center justify-center shrink-0">
+                <svg className="w-8 h-8 text-[#E8611A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+              </div>
               <div className="flex-1 text-center md:text-left">
                 <div className="inline-block bg-[#E8611A] text-white text-xs font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-wide">Secteur prioritaire</div>
                 <h3 className="text-2xl font-black text-white mb-3">Hôtellerie</h3>
@@ -212,14 +214,16 @@ export default function Home() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
             {[
-              { icon: "🛍️", label: "Retail & Commerce", desc: "Grandes surfaces, magasins, centres commerciaux, Sport 2000" },
-              { icon: "🚗", label: "Garages Auto", desc: "Stellantis, Porsche, Mercedes, BPM" },
-              { icon: "🏫", label: "Éducation", desc: "+30 collèges et écoles en Île-de-France" },
-              { icon: "🏛️", label: "Secteur Public", desc: "Mairies, finances publiques, collectivités" },
-              { icon: "🏗️", label: "Industrie", desc: "Entrepôts, usines, sites industriels" },
+              { label: "Retail & Commerce", desc: "Grandes surfaces, magasins, centres commerciaux, Sport 2000", icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /> },
+              { label: "Garages Auto", desc: "Garages et concessions automobiles", icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5" /> },
+              { label: "Éducation", desc: "+30 collèges et écoles en Île-de-France", icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /> },
+              { label: "Secteur Public", desc: "Mairies, finances publiques, collectivités", icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" /> },
+              { label: "Industrie & Logistique", desc: "Entrepôts, usines, sites industriels", icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1" /> },
             ].map((s, i) => (
               <div key={s.label} className={`bg-white border border-[#D1DAFB] rounded-2xl p-8 text-center hover:border-[#1B3B8A]/50 hover:shadow-md transition-all duration-300 ${secteursInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: `${(i + 2) * 80}ms` }}>
-                <div className="text-3xl mb-4">{s.icon}</div>
+                <div className="w-10 h-10 bg-[#1B3B8A]/8 rounded-xl flex items-center justify-center mx-auto mb-4 text-[#1B3B8A]">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">{s.icon}</svg>
+                </div>
                 <h4 className="font-bold text-[#0D1F5C] text-sm mb-2">{s.label}</h4>
                 <p className="text-[#5A6B9A] text-xs leading-relaxed">{s.desc}</p>
               </div>
@@ -240,13 +244,10 @@ export default function Home() {
             {clients.map((client, i) => (
               <div
                 key={client.name}
-                className={`bg-white border border-[#D1DAFB] hover:border-[#1B3B8A]/40 rounded-2xl p-10 flex flex-col items-center gap-5 transition-all duration-300 hover:shadow-lg ${clientsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`bg-white border border-[#D1DAFB] hover:border-[#1B3B8A]/40 rounded-2xl p-8 flex items-center justify-center transition-all duration-300 hover:shadow-lg min-h-[80px] ${clientsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
-                <div className="w-16 h-16 bg-[#0D1F5C] rounded-2xl flex items-center justify-center">
-                  <span className="text-white font-black text-xs tracking-wider">{client.initiales}</span>
-                </div>
-                <p className="text-[#5A6B9A] text-xs font-medium text-center leading-relaxed">{client.name}</p>
+                <p className="text-[#0D1F5C] text-sm font-bold text-center leading-snug">{client.name}</p>
               </div>
             ))}
           </div>

@@ -41,7 +41,6 @@ const protocols = [
   { name: "LoRa", desc: "Longue portée pour objets connectés" },
   { name: "LOXONE", desc: "Solution complète gestion bâtiment" },
   { name: "Node-RED", desc: "Orchestration de flux et automatisation" },
-  { name: "WATTSENS", desc: "Capteurs IoT supervision énergétique" },
 ];
 
 const technologies = [
@@ -49,15 +48,17 @@ const technologies = [
   { name: "Intesis", desc: "Interfaces protocoles CVC" },
   { name: "Passman", desc: "Gestion de passage et contrôle d'accès" },
   { name: "NodOn", desc: "Modules sans fil pour GTB" },
+  { name: "WATTSENS", desc: "Capteurs IoT et supervision énergétique" },
 ];
 
 const fabricants = [
-  { name: "Witte", desc: "Armoires et coffrets électriques" },
+  { name: "WITT", desc: "Fabricant d'équipements techniques" },
   { name: "Swegon", desc: "Ventilation et CVC" },
   { name: "Regin", desc: "Régulateurs et automatismes" },
   { name: "Lennox", desc: "Climatisation et pompes à chaleur" },
   { name: "Clivet", desc: "Solutions CVC tertiaire" },
   { name: "Daikin", desc: "Climatisation et VRV" },
+  { name: "Siemens", desc: "Automatismes et GTB industrielle" },
   { name: "Mitsubishi Electric", desc: "Systèmes CVC et VRF" },
   { name: "Thermozyklus", desc: "Régulation thermique spécialisée" },
 ];
