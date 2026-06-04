@@ -30,10 +30,17 @@ const realisations = [
     highlight: false,
   },
   {
-    client: "Entrepôts Petit Bateau",
+    client: "Grande Distribution — E.Leclerc / Carrefour",
+    secteur: "Grande Distribution & Retail",
+    desc: "Déploiement GTB et supervision énergétique sur plusieurs hypermarchés et supermarchés E.Leclerc et Carrefour. Régulation CVC des surfaces de vente, comptage énergie et gestion des équipements frigorifiques.",
+    tags: ["GTB", "Grande Distribution", "CVC", "Énergie"],
+    highlight: false,
+  },
+  {
+    client: "Entrepôts Logistiques",
     secteur: "Logistique & Industrie",
-    desc: "Câblage et mise en service GTB des entrepôts logistiques.",
-    tags: ["GTB", "Logistique"],
+    desc: "Câblage, mise en service GTB et supervision énergétique sur plusieurs entrepôts logistiques en France. Gestion des aérothermes, déstratificateurs et systèmes de régulation thermique des grands volumes.",
+    tags: ["GTB", "Logistique", "Aérothermes", "CVC"],
     highlight: false,
   },
 ];
