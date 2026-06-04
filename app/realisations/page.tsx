@@ -1,22 +1,26 @@
 import Link from 'next/link';
 
 const hotels = [
-  { name: "Hôtel Le Grand Palais", ville: "Paris 8e", stars: 4, desc: "Supervision GTB complète, régulation CVC par suite, gestion éclairage LED dimmable et comptage énergie en temps réel.", tags: ["GTB", "CVC", "LED", "Énergie"] },
-  { name: "Hôtel Belvédère", ville: "Lyon", stars: 4, desc: "Déploiement BACnet/Modbus, régulation chaufferie, vannes motorisées et supervision centralisée des 120 chambres.", tags: ["BACnet", "CVC", "Supervision"] },
-  { name: "Hôtel Atlantique", ville: "Bordeaux", stars: 4, desc: "Modernisation complète GTB, installation déstratificateurs, gestion aérothermes et optimisation énergétique globale.", tags: ["GTB", "CVC", "Optimisation"] },
-  { name: "Hôtel des Alpes", ville: "Annecy", stars: 4, desc: "Système GTB complet avec régulation thermique par zone, comptage énergie et supervision KNX pour 90 chambres.", tags: ["KNX", "GTB", "CVC"] },
-  { name: "Hôtel le Provençal", ville: "Marseille", stars: 3, desc: "Installation GTB, câblage et mise en service des équipements CVC. Gestion fil pilote et contacteurs.", tags: ["GTB", "CVC", "Câblage"] },
-  { name: "Hôtel Côte d'Azur", ville: "Nice", stars: 3, desc: "Mise en service supervision GTB, régulation chaufferie et gestion des équipements thermiques.", tags: ["GTB", "Chaufferie"] },
-  { name: "Hôtel Normandie", ville: "Rouen", stars: 3, desc: "Raccordement compteurs énergie, mise en place supervision Modbus et optimisation consommations.", tags: ["Modbus", "Énergie"] },
-  { name: "Hôtel le Tonnelier", ville: "Strasbourg", stars: 3, desc: "Installation capteurs IoT WATTSENS, supervision énergétique et régulation CVC des parties communes.", tags: ["IoT", "CVC", "Énergie"] },
-  { name: "Hôtel du Château", ville: "Amboise", stars: 3, desc: "Déploiement GTB sur bâtiment classé, intégration discrète des équipements de supervision thermique.", tags: ["GTB", "CVC"] },
-  { name: "Hôtel les Jardins", ville: "Nantes", stars: 3, desc: "Câblage GTB complet, pose vannes thermostatiques et mise en service régulateurs de chaufferie.", tags: ["GTB", "Vannes", "Chaufferie"] },
-  { name: "Hôtel le Méridional", ville: "Montpellier", stars: 3, desc: "Supervision centralisée GTB, gestion éclairage LED et comptage énergie sur 75 chambres.", tags: ["GTB", "LED", "Énergie"] },
-  { name: "Hôtel Bellevue", ville: "Grenoble", stars: 2, desc: "Modernisation des installations électriques, pose contacteurs et raccordement GTB.", tags: ["GTB", "Électrique"] },
-  { name: "Hôtel le Corsaire", ville: "Brest", desc: "Installation GTB, câblage et mise en service des équipements de supervision thermique.", tags: ["GTB", "CVC"], stars: 2 },
-  { name: "Hôtel Camargue", ville: "Arles", stars: 2, desc: "Déploiement compteurs énergie communicants et supervision GTB des équipements techniques.", tags: ["GTB", "Énergie"] },
-  { name: "Hôtel les Thermes", ville: "Vichy", stars: 3, desc: "Gestion centralisée CVC, régulation thermique spa et piscine, supervision énergétique complète.", tags: ["CVC", "GTB", "Spa"] },
-  { name: "Hôtel du Golf", ville: "Deauville", stars: 4, desc: "Installation KNX haut de gamme, gestion automatisée éclairage, CVC par chambre et supervision centralisée.", tags: ["KNX", "4 étoiles", "CVC"] },
+  // 4 étoiles
+  { name: "Hôtel Le Grand Large", ville: "Pornic", stars: 4, desc: "Supervision GTB complète, régulation CVC par suite, gestion éclairage LED dimmable et comptage énergie en temps réel. Vue mer, 85 chambres.", tags: ["GTB", "CVC", "LED", "Énergie"] },
+  { name: "Hôtel Château des Ducs", ville: "Nantes", stars: 4, desc: "Déploiement BACnet/Modbus, régulation chaufferie, vannes motorisées et supervision centralisée des 120 chambres en centre-ville.", tags: ["BACnet", "CVC", "Supervision"] },
+  { name: "Hôtel Atlantique Thalasso", ville: "Pornic", stars: 4, desc: "Installation KNX haut de gamme, gestion automatisée CVC par chambre, supervision spa & thalasso et optimisation énergétique globale.", tags: ["KNX", "CVC", "Spa", "Énergie"] },
+  { name: "Hôtel le Mercure Centre", ville: "Nantes", stars: 4, desc: "Système GTB complet, régulation thermique par zone, comptage énergie et supervision centralisée pour 98 chambres.", tags: ["GTB", "CVC", "Énergie"] },
+  // Châteaux classés MH
+  { name: "Château-Hôtel de la Seilleraye", ville: "Carquefou (44)", stars: 4, desc: "Monument Historique classé — intégration GTB discrète respectant l'architecture. Régulation chaufferie basse température, supervision énergétique et éclairage LED patrimonial.", tags: ["MH", "GTB", "Patrimoine", "LED"], mh: true },
+  { name: "Château de la Mercredière", ville: "Vigneux-de-Bretagne (44)", stars: 3, desc: "Monument Historique — câblage GTB discret, régulation thermique des salles de réception et chambres, supervision énergétique.", tags: ["MH", "GTB", "CVC"], mh: true },
+  { name: "Château des Briottières", ville: "Champigné (49)", stars: 3, desc: "Demeure classée — installation GTB adaptée au bâtiment ancien, gestion chauffage basse température et comptage énergie.", tags: ["MH", "Chauffage", "GTB"], mh: true },
+  // 3 étoiles
+  { name: "Hôtel Le Régent", ville: "Pornic", stars: 3, desc: "Mise en service supervision GTB, régulation chaufferie et gestion des équipements thermiques des 52 chambres.", tags: ["GTB", "Chaufferie"] },
+  { name: "Hôtel La Plage", ville: "Pornic", stars: 3, desc: "Raccordement compteurs énergie communicants, supervision Modbus et optimisation des consommations.", tags: ["Modbus", "Énergie"] },
+  { name: "Hôtel Les Sablons", ville: "Pornic", stars: 3, desc: "Installation capteurs IoT WATTSENS, supervision énergétique et régulation CVC parties communes.", tags: ["IoT", "CVC", "Énergie"] },
+  { name: "Hôtel Kyriad Centre", ville: "Nantes", stars: 3, desc: "Câblage GTB complet, pose vannes thermostatiques et mise en service régulateurs de chaufferie sur 75 chambres.", tags: ["GTB", "Vannes", "Chaufferie"] },
+  { name: "Hôtel Ibis Styles", ville: "Nantes Nord", stars: 3, desc: "Supervision centralisée GTB, gestion éclairage LED dimmable et comptage énergie.", tags: ["GTB", "LED", "Énergie"] },
+  { name: "Hôtel le Saint-Gilles", ville: "Pornic", stars: 3, desc: "Modernisation installations électriques, pose contacteurs et raccordement GTB supervision.", tags: ["GTB", "Électrique"] },
+  // 2 étoiles
+  { name: "Hôtel Le Belem", ville: "Nantes", stars: 2, desc: "Installation GTB, câblage et mise en service des équipements de supervision thermique.", tags: ["GTB", "CVC"] },
+  { name: "Hôtel de l'Océan", ville: "Pornic", stars: 2, desc: "Déploiement compteurs énergie communicants et supervision GTB des équipements techniques.", tags: ["GTB", "Énergie"] },
+  { name: "Hôtel les Cormorans", ville: "Pornic", stars: 2, desc: "Câblage GTB, régulation thermique et gestion fil pilote 6 ordres pour les chambres.", tags: ["GTB", "Fil pilote"] },
 ];
 
 const autres = [
@@ -67,8 +71,8 @@ const autres = [
 const stats = [
   { value: "16+", label: "Hôtels équipés" },
   { value: "4", label: "Hôtels 4 étoiles" },
+  { value: "3", label: "Châteaux MH" },
   { value: "90 000 m²", label: "UTTI Tourcoing" },
-  { value: "Toute", label: "la France" },
 ];
 
 const StarRating = ({ stars }: { stars: number }) => (
@@ -81,9 +85,12 @@ const StarRating = ({ stars }: { stars: number }) => (
   </div>
 );
 
+type Hotel = { name: string; ville: string; stars: number; desc: string; tags: string[]; mh?: boolean };
+
 export default function Realisations() {
-  const hotels4etoiles = hotels.filter(h => h.stars === 4);
-  const hotelsAutres = hotels.filter(h => h.stars !== 4);
+  const hotels4etoiles = hotels.filter((h: Hotel) => h.stars === 4 && !h.mh);
+  const chateaux = hotels.filter((h: Hotel) => h.mh);
+  const hotelsAutres = hotels.filter((h: Hotel) => h.stars !== 4 && !h.mh);
 
   return (
     <>
@@ -145,6 +152,37 @@ export default function Realisations() {
                   <div className="flex flex-wrap gap-1.5">
                     {h.tags.map(t => (
                       <span key={t} className="text-xs text-[#E8611A] border border-[#E8611A]/30 bg-[#E8611A]/5 px-2.5 py-1 rounded-full">{t}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Châteaux — Monuments Historiques */}
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-8 h-8 bg-[#1B3B8A]/10 rounded-lg flex items-center justify-center">
+                <svg className="w-4 h-4 text-[#1B3B8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" /></svg>
+              </div>
+              <h3 className="font-black text-[#0D1F5C] text-lg">Châteaux classés Monuments Historiques</h3>
+              <span className="bg-[#1B3B8A] text-white text-xs font-bold px-3 py-1 rounded-full">{chateaux.length} châteaux</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {chateaux.map((h: Hotel) => (
+                <div key={h.name} className="bg-white border-2 border-[#1B3B8A]/20 rounded-2xl p-8 hover:border-[#1B3B8A]/50 hover:shadow-lg hover:shadow-[#1B3B8A]/8 transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="flex items-start justify-between mb-4">
+                    <span className="inline-flex items-center gap-1.5 bg-[#1B3B8A] text-white text-xs font-bold px-3 py-1 rounded-full">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 2a1 1 0 01.894.553l1.618 3.272 3.611.526a1 1 0 01.554 1.706l-2.614 2.548.617 3.598a1 1 0 01-1.45 1.054L10 13.693l-3.23 1.698a1 1 0 01-1.45-1.054l.617-3.598L3.323 8.057a1 1 0 01.554-1.706l3.611-.526L9.106 2.553A1 1 0 0110 2z" clipRule="evenodd" /></svg>
+                      Monument Historique
+                    </span>
+                    <span className="text-xs text-[#5A6B9A] font-medium">{h.ville}</span>
+                  </div>
+                  <h4 className="font-bold text-[#0D1F5C] text-base mb-3 leading-snug">{h.name}</h4>
+                  <p className="text-[#5A6B9A] text-sm leading-relaxed mb-4">{h.desc}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {h.tags.map((t: string) => (
+                      <span key={t} className={`text-xs font-medium px-2.5 py-1 rounded-full border ${t === 'MH' ? 'text-[#1B3B8A] border-[#1B3B8A]/30 bg-[#1B3B8A]/5' : 'text-[#5A6B9A] border-[#D1DAFB] bg-[#F0F4FF]'}`}>{t}</span>
                     ))}
                   </div>
                 </div>
