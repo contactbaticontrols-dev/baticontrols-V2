@@ -3,26 +3,26 @@ import Link from 'next/link';
 const hotellerieGroupes = [
   {
     categorie: "Hôtels 4 étoiles",
-    nb: 4,
+    nb: 2,
     lieux: "Nantes & Pornic",
-    desc: "Déploiement GTB/CVC complet sur 4 établissements haut de gamme : supervision centralisée, régulation thermique par chambre, gestion éclairage LED dimmable, comptage énergie en temps réel et optimisation des consommations.",
-    tags: ["GTB", "CVC", "KNX", "BACnet", "LED", "Énergie"],
+    desc: "Déploiement GTB/CVC complet sur 2 établissements haut de gamme : supervision centralisée, régulation thermique par chambre, gestion éclairage LED dimmable et comptage énergie en temps réel.",
+    tags: ["GTB", "CVC", "KNX", "LED", "Énergie"],
     accent: true,
   },
   {
-    categorie: "Châteaux classés Monuments Historiques",
-    nb: 3,
-    lieux: "Loire-Atlantique & Maine-et-Loire",
-    desc: "Intégration GTB discrète et respectueuse du patrimoine sur 3 châteaux classés. Régulation chaufferie basse température, supervision énergétique et éclairage LED patrimonial adaptés aux contraintes des bâtiments historiques.",
+    categorie: "Château classé Monument Historique",
+    nb: 1,
+    lieux: "Loire-Atlantique",
+    desc: "Intégration GTB discrète et respectueuse du patrimoine sur un château classé. Régulation chaufferie basse température, supervision énergétique et éclairage LED patrimonial.",
     tags: ["Monument Historique", "GTB", "Patrimoine", "Chauffage BT"],
     accent: false,
     mh: true,
   },
   {
     categorie: "Hôtels 2 & 3 étoiles",
-    nb: 9,
+    nb: 4,
     lieux: "Nantes & Pornic",
-    desc: "Installation GTB, câblage et mise en service sur 9 établissements. Gestion chaufferie, vannes thermostatiques, comptage énergie et supervision des équipements techniques.",
+    desc: "Installation GTB, câblage et mise en service sur 4 établissements. Gestion chaufferie, vannes thermostatiques, comptage énergie et supervision des équipements techniques.",
     tags: ["GTB", "CVC", "Modbus", "Énergie", "Câblage"],
     accent: false,
   },
@@ -37,9 +37,9 @@ const autres = [
 ];
 
 const stats = [
-  { value: "16+", label: "Hôtels équipés" },
-  { value: "4", label: "Hôtels 4 étoiles" },
-  { value: "3", label: "Châteaux MH" },
+  { value: "6+", label: "Hôtels équipés" },
+  { value: "2", label: "Hôtels 4 étoiles" },
+  { value: "1", label: "Château MH" },
   { value: "90 000 m²", label: "UTTI Tourcoing" },
 ];
 
@@ -79,7 +79,7 @@ export default function Realisations() {
             </div>
             <div>
               <span className="text-[#E8611A] font-semibold text-sm uppercase tracking-widest block">Secteur prioritaire</span>
-              <h2 className="text-3xl font-black text-[#0D1F5C]">Hôtellerie — 16 établissements</h2>
+              <h2 className="text-3xl font-black text-[#0D1F5C]">Hôtellerie — 6 établissements</h2>
             </div>
           </div>
 
