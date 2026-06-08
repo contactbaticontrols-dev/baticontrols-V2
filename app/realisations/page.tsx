@@ -70,10 +70,10 @@ const secteurPublic = [
 ];
 
 const stats = [
-  { value: "6+", label: "Hôtels équipés" },
   { value: "30+", label: "Établissements scolaires" },
   { value: "20+", label: "Copropriétés" },
   { value: "90 000 m²", label: "UTTI Tourcoing" },
+  { value: "8", label: "Experts GTB/CVC" },
 ];
 
 export default function Realisations() {
