@@ -36,10 +36,43 @@ const autres = [
   { client: "Studio de cinéma", secteur: "Audiovisuel — Le Perray-en-Yvelines", desc: "Mise en service équipements GTB d'un studio de cinéma professionnel.", tags: ["GTB", "Culture"], highlight: false },
 ];
 
+const secteurPublic = [
+  {
+    nb: "30+",
+    categorie: "Établissements d'enseignement",
+    desc: "De la crèche à l'université : installation GTB, régulation CVC, gestion énergétique et supervision des équipements techniques sur plus de 30 établissements scolaires et universitaires.",
+    tags: ["GTB", "CVC", "Énergie", "Éducation"],
+  },
+  {
+    nb: "3",
+    categorie: "Mairies",
+    desc: "Gestion technique du bâtiment pour 3 collectivités locales. Supervision centralisée, comptage énergie et optimisation des consommations des bâtiments publics.",
+    tags: ["GTB", "Collectivité", "Énergie"],
+  },
+  {
+    nb: "5",
+    categorie: "Centres des Finances Publiques",
+    desc: "Déploiement GTB sur 5 centres des finances publiques. Régulation CVC, supervision et comptage énergie.",
+    tags: ["GTB", "Secteur Public", "CVC"],
+  },
+  {
+    nb: "20+",
+    categorie: "Copropriétés",
+    desc: "Déploiement GTC pour plus d'une vingtaine de copropriétés en France. Supervision des chaufferies collectives, comptage des consommations et optimisation énergétique.",
+    tags: ["GTC", "Copropriété", "Chaufferie", "Énergie"],
+  },
+  {
+    nb: "4",
+    categorie: "Bailleurs sociaux",
+    desc: "Installation GTB et supervision énergétique pour 4 bailleurs sociaux. Gestion des chaufferies, régulation thermique et suivi des consommations du parc immobilier.",
+    tags: ["GTB", "Bailleur Social", "Chaufferie"],
+  },
+];
+
 const stats = [
   { value: "6+", label: "Hôtels équipés" },
-  { value: "2", label: "Hôtels 4 étoiles" },
-  { value: "1", label: "Château MH" },
+  { value: "30+", label: "Établissements scolaires" },
+  { value: "20+", label: "Copropriétés" },
   { value: "90 000 m²", label: "UTTI Tourcoing" },
 ];
 
@@ -127,8 +160,38 @@ export default function Realisations() {
         </div>
       </section>
 
-      {/* Autres secteurs */}
+      {/* Secteur Public & Collectivités */}
       <section className="py-24 bg-[#F0F4FF]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4 mb-14">
+            <div className="w-12 h-12 bg-[#1B3B8A]/10 rounded-xl flex items-center justify-center shrink-0">
+              <svg className="w-6 h-6 text-[#1B3B8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" /></svg>
+            </div>
+            <div>
+              <span className="text-[#1B3B8A] font-semibold text-sm uppercase tracking-widest block">Secteur public & résidentiel</span>
+              <h2 className="text-3xl font-black text-[#0D1F5C]">Collectivités, éducation & habitat</h2>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {secteurPublic.map((s) => (
+              <div key={s.categorie} className="bg-white rounded-2xl p-10 border-2 border-[#1B3B8A]/15 hover:border-[#1B3B8A]/40 hover:shadow-lg hover:shadow-[#1B3B8A]/8 transition-all duration-300 hover:-translate-y-0.5">
+                <div className="text-4xl font-black text-[#1B3B8A] mb-3">{s.nb}</div>
+                <h3 className="font-black text-[#0D1F5C] text-xl mb-5">{s.categorie}</h3>
+                <div className="border-t border-[#F0F4FF] mb-5" />
+                <p className="text-[#5A6B9A] text-sm leading-loose mb-6">{s.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {s.tags.map(t => (
+                    <span key={t} className="text-xs text-[#1B3B8A] border border-[#1B3B8A]/20 bg-[#1B3B8A]/5 px-3 py-1.5 rounded-full">{t}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Autres secteurs */}
+      <section className="py-24 bg-[#F8FAFB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <span className="text-[#E8611A] font-semibold text-sm uppercase tracking-widest">Autres secteurs</span>
