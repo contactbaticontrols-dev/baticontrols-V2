@@ -145,15 +145,6 @@ export default function Realisations() {
                 <p className={`text-sm font-semibold mb-5 ${g.accent ? 'text-[#E8611A]' : 'text-[#1B3B8A]'}`}>{g.lieux}</p>
                 <div className="border-t border-[#F0F4FF] mb-5" />
                 <p className="text-[#5A6B9A] text-sm leading-loose mb-6">{g.desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  {g.tags.map(t => (
-                    <span key={t} className={`text-xs px-3 py-1.5 rounded-full border ${
-                      g.accent ? 'text-[#E8611A] border-[#E8611A]/25 bg-[#E8611A]/5' :
-                      g.mh ? 'text-[#1B3B8A] border-[#1B3B8A]/25 bg-[#1B3B8A]/5' :
-                      'text-[#5A6B9A] border-[#D1DAFB] bg-[#F0F4FF]'
-                    }`}>{t}</span>
-                  ))}
-                </div>
               </div>
             ))}
           </div>
@@ -178,12 +169,7 @@ export default function Realisations() {
                 <div className="text-4xl font-black text-[#1B3B8A] mb-3">{s.nb}</div>
                 <h3 className="font-black text-[#0D1F5C] text-xl mb-5">{s.categorie}</h3>
                 <div className="border-t border-[#F0F4FF] mb-5" />
-                <p className="text-[#5A6B9A] text-sm leading-loose mb-6">{s.desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  {s.tags.map(t => (
-                    <span key={t} className="text-xs text-[#1B3B8A] border border-[#1B3B8A]/20 bg-[#1B3B8A]/5 px-3 py-1.5 rounded-full">{t}</span>
-                  ))}
-                </div>
+                <p className="text-[#5A6B9A] text-sm leading-loose">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -210,12 +196,7 @@ export default function Realisations() {
                   <p className="text-[#1B3B8A] text-sm mt-1 font-medium">{r.secteur}</p>
                 </div>
                 <div className="border-t border-[#F0F4FF] mb-5" />
-                <p className="text-[#5A6B9A] text-sm leading-loose mb-6">{r.desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  {r.tags.map((tag) => (
-                    <span key={tag} className="text-xs text-[#5A6B9A] border border-[#D1DAFB] bg-[#F0F4FF] px-3 py-1.5 rounded-full">{tag}</span>
-                  ))}
-                </div>
+                <p className="text-[#5A6B9A] text-sm leading-loose">{r.desc}</p>
               </div>
             ))}
           </div>
