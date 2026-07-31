@@ -42,21 +42,6 @@ const services = [
   { title: "Câblage GTB", desc: "Câblage et raccordement de tous équipements GTB/CVC selon les normes en vigueur.", icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg> },
 ];
 
-const clients = [
-  { name: "Sport 2000" },
-  { name: "Intersport" },
-  { name: "E.Leclerc" },
-  { name: "Carrefour" },
-  { name: "PASSMAN" },
-  { name: "Loxone" },
-  { name: "UTTI Tourcoing" },
-  { name: "Grand Annecy" },
-  { name: "Région Occitanie" },
-  { name: "CSTB" },
-  { name: "CDC Habitat" },
-  { name: "..." },
-];
-
 function StatsSection() {
   const { ref, inView } = useInView();
   const experts = useCounter(8, 1500, inView);
@@ -71,7 +56,7 @@ function StatsSection() {
           {[
             { value: experts, suffix: "", label: "Experts GTB/CVC" },
             { value: colleges, suffix: "+", label: "Établissements scolaires" },
-            { value: surface, suffix: "k m²", label: "UTTI Tourcoing" },
+            { value: surface, suffix: "k m²", label: "Plus grand chantier" },
             { value: refs, suffix: "+", label: "Références majeures" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
@@ -89,7 +74,6 @@ function StatsSection() {
 
 export default function Home() {
   const { ref: servicesRef, inView: servicesInView } = useInView();
-  const { ref: clientsRef, inView: clientsInView } = useInView();
 
   return (
     <>
@@ -180,46 +164,6 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link href="/services" className="inline-flex items-center gap-2 text-[#1B3B8A] font-semibold hover:gap-3 transition-all text-sm">
               Voir tous nos services
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CLIENTS */}
-      <section className="py-28 bg-white" ref={clientsRef}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 transition-all duration-700 ${clientsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="text-[#E8611A] font-semibold text-sm uppercase tracking-widest">Références</span>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#0D1F5C] mt-3">Ils nous font confiance</h2>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-            {clients.map((client, i) => (
-              client.name === '...' ? (
-                <div
-                  key="placeholder"
-                  className={`border-2 border-dashed border-[#D1DAFB] rounded-2xl p-8 flex flex-col items-center justify-center gap-2 min-h-[80px] ${clientsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                  style={{ transitionDelay: `${i * 60}ms` }}
-                >
-                  <svg className="w-5 h-5 text-[#D1DAFB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
-                  <p className="text-[#94A3B8] text-xs text-center">Prochain client</p>
-                </div>
-              ) : (
-                <div
-                  key={client.name}
-                  className={`bg-white border border-[#D1DAFB] hover:border-[#1B3B8A]/40 rounded-2xl p-8 flex items-center justify-center transition-all duration-300 hover:shadow-md min-h-[80px] ${clientsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                  style={{ transitionDelay: `${i * 60}ms` }}
-                >
-                  <p className="text-[#0D1F5C] text-sm font-bold text-center leading-snug">{client.name}</p>
-                </div>
-              )
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/realisations" className="inline-flex items-center gap-2 text-[#1B3B8A] font-semibold hover:gap-3 transition-all text-sm">
-              Voir toutes nos réalisations
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
           </div>
